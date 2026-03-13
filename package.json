@@ -1,12 +1,13 @@
 {
-  "name": "fe-exercises-temp",
+  "name": "fe-exercises",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
+    "lint": "biome check .",
+    "format": "biome format --write .",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "react-router-dom": "^7.13.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.6",
     "@eslint/js": "^9.39.4",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
