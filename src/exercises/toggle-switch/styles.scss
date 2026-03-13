@@ -1,0 +1,28 @@
+@use "../shared";
+
+.toggle-switch {
+  display: flex;
+  flex-direction: row;
+
+  button {
+    border-radius: 0;
+    width: 300px;
+    color: rgb(185, 185, 185);
+
+    &:first-child {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+
+  .active {
+    color: white;
+    background-color: blue;
+    transition: 750ms;
+  }
+}
