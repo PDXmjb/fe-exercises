@@ -1,7 +1,22 @@
 import { Link } from 'react-router-dom';
 import './styles.scss';
+import { useState } from 'react';
 
 export default function StarRating() {
+  const [rating, _setRating] = useState(0);
+
+  const emptyStarIcon = '☆';
+  const fullStarIcon = '★';
+  let starRating = '';
+
+  for (let i = 0; i < 5; i++) {
+    if (i < rating) {
+      starRating += fullStarIcon;
+      return;
+    }
+    starRating += emptyStarIcon;
+  }
+
   return (
     <div className="exercise">
       <header className="exercise-header">
@@ -24,8 +39,7 @@ export default function StarRating() {
 
       <section className="workspace">
         <h2>Your Solution</h2>
-        {/* Build your solution here */}
-        <p className="placeholder">Start coding!</p>
+        <span>{starRating}</span>
       </section>
     </div>
   );
