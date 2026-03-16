@@ -33,6 +33,9 @@ export default function AccordionExercise() {
           <Accordion.Item title="Goodbye accordion">
             <span>Goodbye!</span>
           </Accordion.Item>
+          <Accordion.Item>
+            <span>Goodbye!</span>
+          </Accordion.Item>
         </Accordion>
       </section>
     </div>

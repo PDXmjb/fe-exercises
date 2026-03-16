@@ -1,10 +1,6 @@
 @use "../shared";
 
 .accordion {
-    border: 1px solid gray;
-    border-radius: 8px;
-    padding: 15px;
-
     .subtitle {
         font-weight: 400;
     }
@@ -18,7 +14,7 @@
         border: 1px solid gray;
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
-        border-bottom: 0;
+        overflow: hidden;
     }
 
     .item:last-of-type {
@@ -26,20 +22,33 @@
         border-top: 0;
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
+        overflow: hidden;
     }
 
     .item {
-        .content {
-            border-bottom: 1px solid gray;
-            padding: 8px;
-            height: 0;
-            display: none;
-            transition: height 0.2s;
+        border-bottom: 1px solid gray;
+        border-left: 1px solid gray;
+        border-right: 1px solid gray;
 
+        .item-header:hover {
+            background-color: #EEE;
+        }
+
+
+        .content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.2s ease;
+
+            >* {
+                overflow: hidden;
+                padding-left: 8px;
+            }
 
             &.content-open {
-                height: 100%;
-                display: block;
+                grid-template-rows: 1fr;
+                padding-top: 8px;
+                padding-bottom: 8px;
             }
         }
 

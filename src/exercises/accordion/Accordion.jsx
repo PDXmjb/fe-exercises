@@ -30,7 +30,7 @@ function Title({ children }) {
   return <h2 className="title">{children}</h2>;
 }
 
-function Item({ title = 'Accordion item', children }) {
+function Item({ title, children }) {
   const [id, _] = useState(() => crypto.randomUUID());
   const { openItemIds, toggle } = useContext(AccordionContext);
   const isOpen = useMemo(
@@ -39,7 +39,7 @@ function Item({ title = 'Accordion item', children }) {
   );
   return (
     <div className="item">
-      <div className="item-header">
+      <div type="button" className="item-header" onClick={() => toggle(id)}>
         <h3 className="subtitle">{title}</h3>
         <button type="button" onClick={() => toggle(id)}>
           {isOpen ? '-' : '+'}
