@@ -1,34 +1,31 @@
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import './App.scss';
 
+import AccordionExercise from './exercises/accordion';
+import Autocomplete from './exercises/autocomplete';
+import CollaborativeEditor from './exercises/collaborative-editor';
 // Novice
 import Counter from './exercises/counter';
-import ToggleSwitch from './exercises/toggle-switch';
-import Accordion from './exercises/accordion';
-import StarRating from './exercises/star-rating';
-import Tabs from './exercises/tabs';
-
-// Intermediate
-import TodoList from './exercises/todo-list';
-import ModalDialog from './exercises/modal-dialog';
-import InfiniteScroll from './exercises/infinite-scroll';
-import Autocomplete from './exercises/autocomplete';
-import FormValidation from './exercises/form-validation';
-import ImageCarousel from './exercises/image-carousel';
-import DragAndDropList from './exercises/drag-and-drop-list';
-
 // Advanced
 import DataTable from './exercises/data-table';
-import MultiStepForm from './exercises/multi-step-form';
+import DragAndDropList from './exercises/drag-and-drop-list';
+import FormValidation from './exercises/form-validation';
+import ImageCarousel from './exercises/image-carousel';
+import InfiniteScroll from './exercises/infinite-scroll';
 import KanbanBoard from './exercises/kanban-board';
+import ModalDialog from './exercises/modal-dialog';
+import MultiStepForm from './exercises/multi-step-form';
 import RealtimeSearch from './exercises/realtime-search';
+import Spreadsheet from './exercises/spreadsheet';
+import StarRating from './exercises/star-rating';
+import Tabs from './exercises/tabs';
+// Intermediate
+import TodoList from './exercises/todo-list';
+import ToggleSwitch from './exercises/toggle-switch';
 import UndoRedo from './exercises/undo-redo';
-
 // Expert
 import VirtualList from './exercises/virtual-list';
-import Spreadsheet from './exercises/spreadsheet';
-import CollaborativeEditor from './exercises/collaborative-editor';
 
 function App() {
   return (
@@ -39,7 +36,7 @@ function App() {
         {/* Novice */}
         <Route path="/counter" element={<Counter />} />
         <Route path="/toggle-switch" element={<ToggleSwitch />} />
-        <Route path="/accordion" element={<Accordion />} />
+        <Route path="/accordion" element={<AccordionExercise />} />
         <Route path="/star-rating" element={<StarRating />} />
         <Route path="/tabs" element={<Tabs />} />
 

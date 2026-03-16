@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import './styles.scss';
+import Accordion from './Accordion';
 
-export default function Accordion() {
+export default function AccordionExercise() {
   return (
     <div className="exercise">
       <header className="exercise-header">
@@ -24,8 +25,15 @@ export default function Accordion() {
 
       <section className="workspace">
         <h2>Your Solution</h2>
-        {/* Build your solution here */}
-        <p className="placeholder">Start coding!</p>
+        <Accordion allowMultiple>
+          <Accordion.Title>Hello there General Kenobi</Accordion.Title>
+          <Accordion.Item title="Hello accordion">
+            <span>Hello!</span>
+          </Accordion.Item>
+          <Accordion.Item title="Goodbye accordion">
+            <span>Goodbye!</span>
+          </Accordion.Item>
+        </Accordion>
       </section>
     </div>
   );
