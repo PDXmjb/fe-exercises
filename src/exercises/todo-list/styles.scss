@@ -1,1 +1,76 @@
 @use "../shared";
+
+.task-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+
+    label {
+        margin-right: 8px;
+    }
+
+    .task-input {
+        min-width: 300px;
+        padding: 8px;
+        border-radius: 4px;
+    }
+
+    .task-button {
+        background-color: transparent;
+    }
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        background-color: transparent;
+
+        &:hover {
+            background-color: rgba(128, 128, 128, 0.127);
+        }
+
+        &.active {
+            border: 1px solid rgb(30, 68, 203);
+            background-color: rgba(128, 128, 128, 0.036);
+
+            &:hover {
+                background-color: rgb(143, 212, 39);
+            }
+        }
+    }
+}
+
+
+.task-list {
+    p {
+        width: 300px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .task {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid gray;
+
+        button {
+            background-color: transparent;
+            border: 0;
+            padding: 8px;
+
+            &.complete-button {
+                min-width: 170px;
+            }
+
+            &:hover {
+                background-color: rgba(128, 128, 128, 0.127);
+            }
+        }
+    }
+}
