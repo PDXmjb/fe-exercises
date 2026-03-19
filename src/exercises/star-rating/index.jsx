@@ -1,21 +1,35 @@
 import { Link } from 'react-router-dom';
 import './styles.scss';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 export default function StarRating() {
-  const [rating, _setRating] = useState(0);
+  const [rating, setRating] = useState(0);
 
   const emptyStarIcon = '☆';
+  const NUMBER_OF_STARS = 5;
   const fullStarIcon = '★';
-  let starRating = '';
 
-  for (let i = 0; i < 5; i++) {
-    if (i < rating) {
-      starRating += fullStarIcon;
-      return;
+  const starRating = useMemo(() => {
+    let stars = [];
+    for (let i = 0; i < NUMBER_OF_STARS; i++) {
+      if (i < rating) {
+        stars = [...stars, fullStarIcon];
+        continue;
+      }
+      stars = [...stars, emptyStarIcon];
     }
-    starRating += emptyStarIcon;
-  }
+    return stars;
+  }, [rating]);
+
+  console.log(starRating);
+
+  const starClickHandler = (index) => {
+    setRating(index + 1);
+  };
+
+  const starHoverHandler = (index) => {
+    console.log(index);
+  };
 
   return (
     <div className="exercise">
@@ -39,7 +53,19 @@ export default function StarRating() {
 
       <section className="workspace">
         <h2>Your Solution</h2>
-        <span>{starRating}</span>
+        <div>
+          {starRating.map((star, index) => (
+            <button
+              type="button"
+              key={star + crypto.randomUUID()}
+              onClick={() => starClickHandler(index)}
+              onMouseOver={() => starHoverHandler(index)}
+              onFocus={starHoverHandler}
+            >
+              {star}
+            </button>
+          ))}
+        </div>
       </section>
     </div>
   );

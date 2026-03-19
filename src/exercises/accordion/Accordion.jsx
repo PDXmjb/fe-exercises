@@ -31,7 +31,7 @@ function Title({ children }) {
 }
 
 function Item({ title, children }) {
-  const [id, _] = useState(() => crypto.randomUUID());
+  const [id] = useState(() => crypto.randomUUID());
   const { openItemIds, toggle } = useContext(AccordionContext);
   const isOpen = useMemo(
     () => openItemIds?.find((i) => i === id),
@@ -39,12 +39,10 @@ function Item({ title, children }) {
   );
   return (
     <div className="item">
-      <div type="button" className="item-header" onClick={() => toggle(id)}>
+      <button type="button" className="item-header" onClick={() => toggle(id)}>
         <h3 className="subtitle">{title}</h3>
-        <button type="button" onClick={() => toggle(id)}>
-          {isOpen ? '-' : '+'}
-        </button>
-      </div>
+        <span>{isOpen ? '-' : '+'}</span>
+      </button>
       <div className={`content ${isOpen ? 'content-open' : ''}`}>
         {children}
       </div>
