@@ -5,6 +5,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: left;
+    margin-bottom: 1rem;
 
     label {
         margin-right: 8px;
@@ -14,18 +15,28 @@
         min-width: 300px;
         padding: 8px;
         border-radius: 4px;
+        font-size: 1rem;
     }
 
     .task-button {
         background-color: transparent;
+        margin-left: 1rem;
+
+        padding: 1rem;
+
+        &:hover {
+            background-color: #EEE;
+        }
     }
 }
 
 .filter-buttons {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1rem;
 
     button {
+        flex: 1;
         background-color: transparent;
 
         &:hover {
@@ -33,12 +44,8 @@
         }
 
         &.active {
-            border: 1px solid rgb(30, 68, 203);
-            background-color: rgba(128, 128, 128, 0.036);
-
-            &:hover {
-                background-color: rgb(143, 212, 39);
-            }
+            text-decoration: underline;
+            font-weight: bold;
         }
     }
 }
@@ -59,14 +66,15 @@
         justify-content: space-between;
         border-bottom: 1px solid gray;
 
+        .task-text {
+            margin-left: 2rem;
+        }
+
         button {
             background-color: transparent;
             border: 0;
             padding: 8px;
-
-            &.complete-button {
-                min-width: 170px;
-            }
+            margin: 8px;
 
             &:hover {
                 background-color: rgba(128, 128, 128, 0.127);

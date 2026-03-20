@@ -8,14 +8,20 @@ export default function TodoList() {
     JSON.parse(localStorage.getItem('taskList')) || [],
   ); // Load in from localstorage
 
-  const [filter, setFilter] = useState(null);
+  const [filter, setFilter] = useState(
+    JSON.parse(localStorage.getItem('taskFilter') || null),
+  );
 
-  const setFilterHandler = (filterBy) => setFilter(filterBy);
+  const setFilterHandler = (filterBy) => {
+    setFilter(filterBy);
+    localStorage.setItem('taskFilter', JSON.stringify(filterBy));
+  };
 
   const {
     register,
     getValues,
     setValue,
+    setFocus,
     formState: { errors },
   } = useForm();
 
@@ -28,6 +34,7 @@ export default function TodoList() {
     setTaskList(newList);
     localStorage.setItem('taskList', JSON.stringify(newList));
     setValue('task', '');
+    setFocus('task');
   };
 
   const updateValue = (updatedArray) => {
@@ -91,6 +98,7 @@ export default function TodoList() {
             {...register('task')}
             name="task"
             type="text"
+            autoComplete="off"
           />
           <button className="task-button" type="submit">
             Add
@@ -102,30 +110,29 @@ export default function TodoList() {
             type="button"
             onClick={() => setFilterHandler(null)}
           >
-            All
+            All tasks
           </button>
           <button
             className={filter ? 'active' : ''}
             type="button"
             onClick={() => setFilterHandler(true)}
           >
-            Complete only
+            Complete
           </button>
           <button
             className={filter === false ? 'active' : ''}
             type="button"
             onClick={() => setFilterHandler(false)}
           >
-            Incomplete only
+            Incomplete
           </button>
         </div>
 
-        <div className="task-list">
+        <section className="task-list">
           {filteredTaskList.map((t, _index) => (
             <div className="task" key={t.id}>
-              <p> {t.task}</p>
-              <div>
-                <span> {t.complete ? '☑' : '☐'}</span>
+              <p className="task-text"> {t.task}</p>
+              <div className="task-item-buttons">
                 <button type="button" onClick={() => removeItemHandler(t.id)}>
                   🗑️
                 </button>
@@ -134,12 +141,12 @@ export default function TodoList() {
                   type="button"
                   onClick={() => toggleCompleteItemHandler(t.id)}
                 >
-                  {t.complete ? 'Mark incomplete' : 'Mark complete'}
+                  {t.complete ? '☑' : '☐'}
                 </button>
               </div>
             </div>
           ))}
-        </div>
+        </section>
       </section>
     </div>
   );
