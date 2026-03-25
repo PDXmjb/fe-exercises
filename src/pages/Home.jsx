@@ -89,6 +89,13 @@ const exercises = [
     tags: ['DnD API', 'reordering'],
     difficulty: 'intermediate',
   },
+    {
+    path: '/js-exercises',
+    title: 'JS Exercises',
+    description: 'Various Leetcode exercises',
+    tags: ['Leetcode', 'Trees'],
+    difficulty: 'intermediate',
+  },
 
   // Advanced
   {

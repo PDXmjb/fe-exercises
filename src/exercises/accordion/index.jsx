@@ -1,6 +1,52 @@
 import { Link } from 'react-router-dom';
 import './styles.scss';
 import Accordion from './Accordion';
+import { useState } from 'react';
+import { useEffect } from 'react';
+
+// Create a UserList component that fetches users from an API and displays them. Handle loading and error states.
+function UserList() {
+  // Fetch from: https://jsonplaceholder.typicode.com/users
+  // Display: list of user names
+  // Show: "Loading..." while fetching
+  // Show: "Error: {message}" if fetch fails
+
+  const [users, setUsers] = useState([]);
+  const [error, setError] = useState();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          'https://jsonplaceholder.typicode.com/users',
+        );
+        const data = await response.json();
+        setUsers(data);
+      } catch (e) {
+        setError(`Error: ${e}`);
+      }
+      setLoading(false);
+    }
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
+  return (
+    <ul>
+      {users.map((u) => (
+        <li key={u.id}>{u.name}</li>
+      ))}
+    </ul>
+  );
+}
 
 export default function AccordionExercise() {
   return (
@@ -37,6 +83,7 @@ export default function AccordionExercise() {
             <span>Goodbye!</span>
           </Accordion.Item>
         </Accordion>
+        <UserList />
       </section>
     </div>
   );

@@ -26,6 +26,7 @@ import ToggleSwitch from './exercises/toggle-switch';
 import UndoRedo from './exercises/undo-redo';
 // Expert
 import VirtualList from './exercises/virtual-list';
+import JSExercisesDisplayer from './exercises/js-exercises';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path="/form-validation" element={<FormValidation />} />
         <Route path="/image-carousel" element={<ImageCarousel />} />
         <Route path="/drag-and-drop-list" element={<DragAndDropList />} />
+        <Route path="/js-exercises" element={<JSExercisesDisplayer />} />
 
         {/* Advanced */}
         <Route path="/data-table" element={<DataTable />} />
