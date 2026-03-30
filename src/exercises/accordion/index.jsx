@@ -32,11 +32,11 @@ function UserList() {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <div>Loading...</div>;
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return <div>Error: {error}</div>;
   }
 
   return (
