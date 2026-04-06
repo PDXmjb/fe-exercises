@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
 import './styles.scss';
+import { useState } from 'react';
+import Modal from './Modal';
 
 export default function ModalDialog() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleModal = () => {
+    setIsOpen((s) => !s);
+  };
+  console.log('OPEN', isOpen);
   return (
     <div className="exercise">
       <header className="exercise-header">
@@ -27,7 +34,59 @@ export default function ModalDialog() {
       <section className="workspace">
         <h2>Your Solution</h2>
         {/* Build your solution here */}
-        <p className="placeholder">Start coding!</p>
+        <button onClick={toggleModal} type="button">
+          Open modal
+        </button>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <p>Bloop</p>
+        <Modal open={isOpen} toggleModal={toggleModal}>
+          <div>Content!</div>
+        </Modal>
       </section>
     </div>
   );
