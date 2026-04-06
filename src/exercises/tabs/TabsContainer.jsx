@@ -2,33 +2,38 @@ import { createContext, useContext, useState } from 'react';
 
 const TabsContext = createContext(null);
 
-function TabsContainer({ children }) {
-  const [selectedTab, setSelectedTab] = useState('');
+function TabsContainer({ tabs, children }) {
+  const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   const selectTab = (tab) => setSelectedTab(tab);
 
   return (
     <TabsContext.Provider value={{ selectedTab, selectTab }}>
+      <div className="tabs-container">
+        {tabs.map((t) => (
+          <button
+            type="button"
+            key={t}
+            className={selectedTab === t ? 'tab active' : 'tab'}
+            onClick={() => selectTab(t)}
+          >
+            {t}
+          </button>
+        ))}
+      </div>
       <div>{children}</div>
     </TabsContext.Provider>
   );
 }
 
 function Tab({ label, children }) {
-  const { selectTab } = useContext(TabsContext);
+  const { selectedTab } = useContext(TabsContext);
 
-  if (label !== selectTab) {
-    return <button type="button">{label}</button>;
+  if (label !== selectedTab) {
+    return null;
   }
 
-  return (
-    <>
-      <button type="button" className="active">
-        {label}
-      </button>
-      <div>{children}</div>
-    </>
-  );
+  return <div className="tab-content">{children}</div>;
 }
 
 TabsContainer.Tab = Tab;

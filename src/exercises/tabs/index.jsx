@@ -3,6 +3,7 @@ import './styles.scss';
 import TabsContainer from './TabsContainer';
 
 export default function Tabs() {
+  const tabs = ['Hello', 'Goodbye'];
   return (
     <div className="exercise">
       <header className="exercise-header">
@@ -25,11 +26,11 @@ export default function Tabs() {
 
       <section className="workspace">
         <h2>Your Solution</h2>
-        <TabsContainer>
-          <TabsContainer.Tab label="Hello">
+        <TabsContainer tabs={tabs}>
+          <TabsContainer.Tab label={tabs[0]}>
             <p>Hello world!</p>
           </TabsContainer.Tab>
-          <TabsContainer.Tab label="Goodbye">
+          <TabsContainer.Tab label={tabs[1]}>
             <p>Goodbye world!</p>
           </TabsContainer.Tab>
         </TabsContainer>

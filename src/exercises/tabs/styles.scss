@@ -1,1 +1,35 @@
 @use "../shared";
+
+.tabs-container {
+    display: flex;
+    flex: row;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 1px solid green;
+
+    .tab {
+        background-color: transparent;
+        padding: 0.5rem 2rem;
+        color: grey;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        border: 1px solid #DFDFDF;
+
+        &.active {
+            font-weight: bold;
+            color: green;
+            box-shadow: 2px 0 3px #999999;
+        }
+    }
+}
+
+.tab-content {
+    padding: 16px;
+    border-left: 1px solid #999999;
+    border-right: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    min-height: 100px;
+}
