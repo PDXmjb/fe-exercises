@@ -32,7 +32,7 @@ export default function Counter() {
           <button
             type="button"
             onClick={() => {
-              setCount(count + 1);
+              setCount((count) => count + 1);
             }}
             className="button-positive"
           >
@@ -41,9 +41,11 @@ export default function Counter() {
           <button
             type="button"
             onClick={() => {
-              setCount(count - 1);
+              setCount((count) => count - 1);
             }}
-            className="button-negative"
+            className={`button-negative ${count === 0 ? 'disabled' : ''}`}
+            disabled={count === 0}
+            aria-disabled={count === 0}
           >
             Decrement
           </button>
