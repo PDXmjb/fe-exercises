@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './styles.scss';
+import TabsContainer from './TabsContainer';
 
 export default function Tabs() {
   return (
@@ -24,8 +25,14 @@ export default function Tabs() {
 
       <section className="workspace">
         <h2>Your Solution</h2>
-        {/* Build your solution here */}
-        <p className="placeholder">Start coding!</p>
+        <TabsContainer>
+          <TabsContainer.Tab label="Hello">
+            <p>Hello world!</p>
+          </TabsContainer.Tab>
+          <TabsContainer.Tab label="Goodbye">
+            <p>Goodbye world!</p>
+          </TabsContainer.Tab>
+        </TabsContainer>
       </section>
     </div>
   );
