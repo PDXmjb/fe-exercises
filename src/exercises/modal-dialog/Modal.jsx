@@ -1,6 +1,11 @@
 function Modal({ open, children, toggleModal, title = 'Modal' }) {
   console.log(open);
-  if (!open) return null;
+  if (!open) {
+    document.body.style.overflow = 'visible';
+    return null;
+  } else {
+    document.body.style.overflow = 'hidden';
+  }
 
   return (
     <div
