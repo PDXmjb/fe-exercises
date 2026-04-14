@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import './styles.scss';
+import { useEffect, useState } from 'react';
 import Accordion from './Accordion';
-import { useState } from 'react';
-import { useEffect } from 'react';
 
 // Create a UserList component that fetches users from an API and displays them. Handle loading and error states.
 function UserList() {
@@ -82,8 +81,10 @@ export default function AccordionExercise() {
           <Accordion.Item>
             <span>Goodbye!</span>
           </Accordion.Item>
+          <Accordion.Item title="User list">
+            <UserList />
+          </Accordion.Item>
         </Accordion>
-        <UserList />
       </section>
     </div>
   );

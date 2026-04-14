@@ -1,0 +1,11 @@
+// Product Page styles
+
+.product-list {
+    display: grid;
+
+    .product-card {
+        border: 1px solid gray;
+        border-radius: 1rem;
+        padding: 2rem;
+    }
+}

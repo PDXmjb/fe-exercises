@@ -13,9 +13,11 @@ import DragAndDropList from './exercises/drag-and-drop-list';
 import FormValidation from './exercises/form-validation';
 import ImageCarousel from './exercises/image-carousel';
 import InfiniteScroll from './exercises/infinite-scroll';
+import JSExercisesDisplayer from './exercises/js-exercises';
 import KanbanBoard from './exercises/kanban-board';
 import ModalDialog from './exercises/modal-dialog';
 import MultiStepForm from './exercises/multi-step-form';
+import ProductPage from './exercises/product-page';
 import RealtimeSearch from './exercises/realtime-search';
 import Spreadsheet from './exercises/spreadsheet';
 import StarRating from './exercises/star-rating';
@@ -26,7 +28,6 @@ import ToggleSwitch from './exercises/toggle-switch';
 import UndoRedo from './exercises/undo-redo';
 // Expert
 import VirtualList from './exercises/virtual-list';
-import JSExercisesDisplayer from './exercises/js-exercises';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
         <Route path="/form-validation" element={<FormValidation />} />
         <Route path="/image-carousel" element={<ImageCarousel />} />
         <Route path="/drag-and-drop-list" element={<DragAndDropList />} />
+        <Route path="/product-page" element={<ProductPage />} />
         <Route path="/js-exercises" element={<JSExercisesDisplayer />} />
 
         {/* Advanced */}

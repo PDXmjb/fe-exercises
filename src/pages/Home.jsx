@@ -89,6 +89,13 @@ const exercises = [
     tags: ['DnD API', 'reordering'],
     difficulty: 'intermediate',
   },
+  {
+    path: '/product-page',
+    title: 'Product Page',
+    description: 'E-commerce product display with cart interactions',
+    tags: ['state', 'forms', 'e-commerce'],
+    difficulty: 'intermediate',
+  },
     {
     path: '/js-exercises',
     title: 'JS Exercises',

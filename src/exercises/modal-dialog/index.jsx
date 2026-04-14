@@ -5,8 +5,8 @@ import Modal from './Modal';
 
 export default function ModalDialog() {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleModal = () => {
-    setIsOpen((s) => !s);
+  const toggleModal = (isOpen) => {
+    setIsOpen((s) => (s = isOpen));
   };
   console.log('OPEN', isOpen);
   return (
@@ -34,7 +34,7 @@ export default function ModalDialog() {
       <section className="workspace">
         <h2>Your Solution</h2>
         {/* Build your solution here */}
-        <button onClick={toggleModal} type="button">
+        <button onClick={toggleModal(true)} type="button">
           Open modal
         </button>
         <p>Bloop</p>
@@ -84,8 +84,11 @@ export default function ModalDialog() {
         <p>Bloop</p>
         <p>Bloop</p>
         <p>Bloop</p>
-        <Modal open={isOpen} toggleModal={toggleModal}>
+        <Modal isOpen={isOpen} toggleModal={toggleModal}>
           <div>Content!</div>
+          <input id="1" name="1" type="text" placeholder="Bleep" />
+          <br />
+          <textarea id="2" name="2"></textarea>
         </Modal>
       </section>
     </div>
