@@ -1,13 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
 
 async function fetchProducts(params) {
+  console.log('Parameters', params);
   const searchParams = new URLSearchParams();
   searchParams.set('_quantity', params.quantity.toString());
 
   if (params.priceMin !== undefined) {
     searchParams.set('_price_min', params.priceMin.toFixed(2));
   }
-  if (params.priceMax !== undefined) {
+  if (params.priceMax !== undefined && params.priceMax !== 'Infinity') {
     searchParams.set('_price_max', params.priceMax.toFixed(2));
   }
   if (params.taxes !== undefined) {
@@ -32,5 +33,6 @@ export function useProductsQuery(params) {
   return useQuery({
     queryKey: ['products', params],
     queryFn: () => fetchProducts(params),
+    staleTime: 500,
   });
 }
