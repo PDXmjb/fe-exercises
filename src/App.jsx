@@ -11,6 +11,7 @@ import Counter from './exercises/counter';
 import DataTable from './exercises/data-table';
 import DragAndDropList from './exercises/drag-and-drop-list';
 import FormValidation from './exercises/form-validation';
+import HackerNews from './exercises/hacker-news';
 import ImageCarousel from './exercises/image-carousel';
 import InfiniteScroll from './exercises/infinite-scroll';
 import JSExercisesDisplayer from './exercises/js-exercises';
@@ -52,6 +53,7 @@ function App() {
         <Route path="/drag-and-drop-list" element={<DragAndDropList />} />
         <Route path="/product-page" element={<ProductPage />} />
         <Route path="/js-exercises" element={<JSExercisesDisplayer />} />
+        <Route path="/hacker-news" element={<HackerNews />} />
 
         {/* Advanced */}
         <Route path="/data-table" element={<DataTable />} />

@@ -10,11 +10,14 @@ export default function ProductPage() {
   const [quantity, setQuantity] = useState(10);
   const [isFiltersVisible, setIsFiltersVisible] = useState(false);
 
-  const { data, isLoading, error } = useProductsQuery({
+  // TODO: add broken face when products query errors
+  const { data, isLoading } = useProductsQuery({
     quantity,
     priceMax: maxPrice,
     priceMin: minPrice,
   });
+
+  // TODO: add product detail page when clicking on a product.
 
   const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -27,7 +30,6 @@ export default function ProductPage() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -60,7 +62,7 @@ export default function ProductPage() {
         </ul>
       </section>
 
-      <section className="workspace">
+      <section className="workspace product__page">
         <h1>Products</h1>
         <button
           className="filter__button"
@@ -109,7 +111,7 @@ export default function ProductPage() {
               return (
                 <div key={d.id} className="product__card">
                   {d.name}
-                  <div>Price: {formatter.format(d.price)}</div>
+                  <div>{formatter.format(d.price)}</div>
                   <img
                     className="product__img"
                     src={d.images[0].url}
