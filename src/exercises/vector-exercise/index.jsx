@@ -21,7 +21,7 @@ function VectorExercise() {
   const [winner, setWinner] = useState(null);
   const [board, setBoard] = useState(buildBoard(width));
 
-  const resetGame = () => {
+  const resetGame = (width) => {
     setBoard(buildBoard(width));
     setTurn('X');
     setWinner(null);
@@ -29,7 +29,7 @@ function VectorExercise() {
 
   const changeWidth = (width) => {
     setWidth(width);
-    resetGame();
+    resetGame(width);
   };
 
   const determineWin = (currentBoard) => {
@@ -126,19 +126,19 @@ function VectorExercise() {
         <div className="interview__controls">
           <label htmlFor="width">Width: </label>
           <input
+            defaultValue={width}
             id="width"
             max={9}
             min={3}
             type="number"
-            value={width}
             onChange={(e) => changeWidth(e.target.value)}
           ></input>
-          <p>Current turn: {turn}</p>
+          {!winner && <p>Current turn: {turn}</p>}
         </div>
         {winner && (
           <>
             <p>We have a winner! It is {winner}!</p>
-            <button type="button" onClick={resetGame}>
+            <button type="button" onClick={() => resetGame(width)}>
               Restart
             </button>
           </>
