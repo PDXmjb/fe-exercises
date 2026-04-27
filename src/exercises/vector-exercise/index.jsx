@@ -42,7 +42,6 @@ function VectorExercise() {
       const firstRowVal =
         currentBoard[i][0] !== '-' ? currentBoard[i][0] : 'SKIP';
       for (let j = 0; j < width; j++) {
-        console.log(currentBoard[i]);
         if (firstRowVal === 'SKIP' || currentBoard[i][j] !== firstRowVal) {
           break;
         }
