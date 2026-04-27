@@ -21,15 +21,23 @@ function VectorExercise() {
   const [winner, setWinner] = useState(null);
   const [board, setBoard] = useState(buildBoard(width));
 
+  const resetGame = () => {
+    setBoard(buildBoard(width));
+    setTurn('X');
+    setWinner(null);
+  };
+
   const changeWidth = (width) => {
     setWidth(width);
-    setBoard(buildBoard(width));
+    resetGame();
   };
 
   const determineWin = (currentBoard) => {
     // Win - all of a row is the same turn value (X or O)
     // OR - all of a column is the same turn value
     // OR - all of a diagonal left/right are the same value
+
+    // Check Rows
     for (let i = 0; i < width; i++) {
       const firstRowVal =
         currentBoard[i][0] !== '-' ? currentBoard[i][0] : 'SKIP';
@@ -45,7 +53,7 @@ function VectorExercise() {
       }
     }
 
-    // Any column?
+    // Check columns
     for (let i = 0; i < width; i++) {
       const firstColVal =
         currentBoard[0][i] !== '-' ? currentBoard[0][i] : 'SKIP';
@@ -130,13 +138,7 @@ function VectorExercise() {
         {winner && (
           <>
             <p>We have a winner! It is {winner}!</p>
-            <button
-              type="button"
-              onClick={() => {
-                setBoard(buildBoard(width));
-                setWinner(null);
-              }}
-            >
+            <button type="button" onClick={resetGame}>
               Restart
             </button>
           </>
