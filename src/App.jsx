@@ -27,6 +27,7 @@ import Tabs from './exercises/tabs';
 import TodoList from './exercises/todo-list';
 import ToggleSwitch from './exercises/toggle-switch';
 import UndoRedo from './exercises/undo-redo';
+import VectorExercise from './exercises/vector-exercise';
 // Expert
 import VirtualList from './exercises/virtual-list';
 
@@ -34,38 +35,39 @@ function App() {
   return (
     <div className="app">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route element={<Home />} path="/" />
 
         {/* Novice */}
-        <Route path="/counter" element={<Counter />} />
-        <Route path="/toggle-switch" element={<ToggleSwitch />} />
-        <Route path="/accordion" element={<AccordionExercise />} />
-        <Route path="/star-rating" element={<StarRating />} />
-        <Route path="/tabs" element={<Tabs />} />
+        <Route element={<Counter />} path="/counter" />
+        <Route element={<ToggleSwitch />} path="/toggle-switch" />
+        <Route element={<AccordionExercise />} path="/accordion" />
+        <Route element={<StarRating />} path="/star-rating" />
+        <Route element={<Tabs />} path="/tabs" />
 
         {/* Intermediate */}
-        <Route path="/todo-list" element={<TodoList />} />
-        <Route path="/modal-dialog" element={<ModalDialog />} />
-        <Route path="/infinite-scroll" element={<InfiniteScroll />} />
-        <Route path="/autocomplete" element={<Autocomplete />} />
-        <Route path="/form-validation" element={<FormValidation />} />
-        <Route path="/image-carousel" element={<ImageCarousel />} />
-        <Route path="/drag-and-drop-list" element={<DragAndDropList />} />
-        <Route path="/product-page" element={<ProductPage />} />
-        <Route path="/js-exercises" element={<JSExercisesDisplayer />} />
-        <Route path="/hacker-news" element={<HackerNews />} />
+        <Route element={<TodoList />} path="/todo-list" />
+        <Route element={<ModalDialog />} path="/modal-dialog" />
+        <Route element={<InfiniteScroll />} path="/infinite-scroll" />
+        <Route element={<Autocomplete />} path="/autocomplete" />
+        <Route element={<FormValidation />} path="/form-validation" />
+        <Route element={<ImageCarousel />} path="/image-carousel" />
+        <Route element={<DragAndDropList />} path="/drag-and-drop-list" />
+        <Route element={<ProductPage />} path="/product-page" />
+        <Route element={<JSExercisesDisplayer />} path="/js-exercises" />
+        <Route element={<HackerNews />} path="/hacker-news" />
+        <Route element={<VectorExercise />} path="/vector" />
 
         {/* Advanced */}
-        <Route path="/data-table" element={<DataTable />} />
-        <Route path="/multi-step-form" element={<MultiStepForm />} />
-        <Route path="/kanban-board" element={<KanbanBoard />} />
-        <Route path="/realtime-search" element={<RealtimeSearch />} />
-        <Route path="/undo-redo" element={<UndoRedo />} />
+        <Route element={<DataTable />} path="/data-table" />
+        <Route element={<MultiStepForm />} path="/multi-step-form" />
+        <Route element={<KanbanBoard />} path="/kanban-board" />
+        <Route element={<RealtimeSearch />} path="/realtime-search" />
+        <Route element={<UndoRedo />} path="/undo-redo" />
 
         {/* Expert */}
-        <Route path="/virtual-list" element={<VirtualList />} />
-        <Route path="/spreadsheet" element={<Spreadsheet />} />
-        <Route path="/collaborative-editor" element={<CollaborativeEditor />} />
+        <Route element={<VirtualList />} path="/virtual-list" />
+        <Route element={<Spreadsheet />} path="/spreadsheet" />
+        <Route element={<CollaborativeEditor />} path="/collaborative-editor" />
       </Routes>
     </div>
   );

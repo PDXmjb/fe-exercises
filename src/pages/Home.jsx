@@ -140,6 +140,13 @@ const exercises = [
     tags: ['patterns', 'history'],
     difficulty: 'advanced',
   },
+  {
+    path: '/vector',
+    title: 'Vector exercise',
+    description: 'Exercise during the 3rd interview with Vector',
+    tags: ['interview'],
+    difficulty: 'advanced',
+  },
 
   // Expert
   {
@@ -186,7 +193,7 @@ function Home() {
 
   return (
     <main className="home">
-      <header className="home-header">
+      <header className="home__header">
         <h1>Frontend Exercises</h1>
         <p className="subtitle">
           Practice projects for senior-level frontend interviews
@@ -194,19 +201,19 @@ function Home() {
       </header>
 
       {sortedDifficulties.map((difficulty) => (
-        <section key={difficulty} className="difficulty-section">
+        <section className="difficulty-section" key={difficulty}>
           <h2 className={`section-title ${difficulty}`}>
             {difficultyLabels[difficulty]}
           </h2>
           <ul className="exercise-grid">
             {grouped[difficulty].map((exercise) => (
               <li key={exercise.path}>
-                <Link to={exercise.path} className="exercise-card">
+                <Link className="exercise-card" to={exercise.path}>
                   <h3>{exercise.title}</h3>
                   <p>{exercise.description}</p>
                   <div className="tags">
                     {exercise.tags.map((tag) => (
-                      <span key={tag} className="tag">
+                      <span className="tag" key={tag}>
                         {tag}
                       </span>
                     ))}

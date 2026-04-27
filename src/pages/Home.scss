@@ -1,13 +1,16 @@
 .home {
   flex: 1;
   padding: 48px 24px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.home-header {
+.home__header {
   margin-bottom: 48px;
 }
 
-.home-header h1 {
+.home__header h1 {
   margin: 0 0 12px;
 }
 
