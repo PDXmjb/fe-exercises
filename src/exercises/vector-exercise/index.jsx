@@ -88,7 +88,7 @@ function VectorExercise() {
       ) {
         break;
       }
-      if (i === width - 1 && currentBoard[i][max - i] === firstDiagVal) {
+      if (i === max && currentBoard[i][max - i] === firstDiagVal) {
         return true;
       }
     }
