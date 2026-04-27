@@ -16,7 +16,10 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "correctness": {
+        "noUnusedVariables": "off"
+      }
     }
   },
   "javascript": {
@@ -26,9 +29,16 @@
   },
   "overrides": [
     {
-      "includes": ["package.json"],
+      "includes": ["package.json", "biome.json"],
       "formatter": {
         "enabled": false
+      },
+      "assist": {
+        "actions": {
+          "source": {
+            "useSortedKeys": "off"
+          }
+        }
       }
     }
   ],

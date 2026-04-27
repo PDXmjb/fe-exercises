@@ -2,10 +2,24 @@ import { Link } from 'react-router-dom';
 import './styles.scss';
 
 export default function MultiStepForm() {
+  async function mutateData(data) {
+    const response = await fetch('https://my-login.com/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(data)),
+    });
+
+    if (!response.ok) {
+      throw new Error('Unable to log in, try again later.');
+    }
+  }
+  const submitFormHandler = (data) => {
+    mutateData(data);
+  };
   return (
     <div className="exercise">
       <header className="exercise-header">
-        <Link to="/" className="back-link">
+        <Link className="back-link" to="/">
           &larr; Back
         </Link>
         <h1>Multi-step Form Wizard</h1>
@@ -26,8 +40,13 @@ export default function MultiStepForm() {
 
       <section className="workspace">
         <h2>Your Solution</h2>
-        {/* Build your solution here */}
-        <p className="placeholder">Start coding!</p>
+        <form className="login__form" id="login" onSubmit={submitFormHandler}>
+          <label htmlFor="email">Email</label>
+          <input required id="email" name="email" type="email" />
+          <label htmlFor="password">Password</label>
+          <input required id="password" name="password" type="password" />
+          <button type="submit">Submit</button>
+        </form>
       </section>
     </div>
   );

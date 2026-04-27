@@ -44,7 +44,7 @@ export default function ProductPage() {
   return (
     <div className="exercise">
       <header className="exercise-header">
-        <Link to="/" className="back-link">
+        <Link className="back-link" to="/">
           &larr; Back
         </Link>
         <h1>Product Page</h1>
@@ -72,35 +72,35 @@ export default function ProductPage() {
           Filter
         </button>
         <form
-          id="filter"
           className={`${isFiltersVisible ? 'products__filter' : 'products__filter--hidden'}`}
+          id="filter"
           onSubmit={handleSubmit(onSubmit)}
         >
           <label htmlFor="maxPrice">Max price</label>
           <input
-            id="maxPrice"
-            type="number"
-            min={0}
-            max={1000000}
             defaultValue={maxPrice}
+            id="maxPrice"
+            max={1000000}
+            min={0}
+            type="number"
             {...register('maxPrice')}
           />
           <label htmlFor="minPrice">Min price</label>
           <input
-            id="minPrice"
-            type="number"
-            min={0}
-            max={1000000}
             defaultValue={minPrice}
+            id="minPrice"
+            max={1000000}
+            min={0}
+            type="number"
             {...register('minPrice')}
           />
           <label htmlFor="quantity">Quantity</label>
           <input
-            id="quantity"
-            type="number"
-            min={0}
-            max={100}
             defaultValue={quantity}
+            id="quantity"
+            max={100}
+            min={0}
+            type="number"
             {...register('quantity')}
           />
           <button type="submit">Get products</button>
@@ -109,13 +109,13 @@ export default function ProductPage() {
           <div className="product__list">
             {data?.map((d) => {
               return (
-                <div key={d.id} className="product__card">
+                <div className="product__card" key={d.id}>
                   {d.name}
                   <div>{formatter.format(d.price)}</div>
                   <img
+                    alt={d.description}
                     className="product__img"
                     src={d.images[0].url}
-                    alt={d.description}
                   />
                 </div>
               );
@@ -123,7 +123,7 @@ export default function ProductPage() {
           </div>
         ) : (
           <div className="loader">
-            <img src="loading-gif.gif" alt="Loading..." />
+            <img alt="Loading..." src="loading-gif.gif" />
           </div>
         )}
       </section>

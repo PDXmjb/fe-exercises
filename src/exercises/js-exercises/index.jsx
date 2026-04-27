@@ -3,8 +3,7 @@ import './styles.scss';
 import { convertStringToTree } from './convert-string-to-tree';
 
 export default function JSExercisesDisplayer() {
-
-  const result = convertStringToTree("4(2(3)(1))(6(5))");
+  const result = convertStringToTree('4(2(3)(1))(6(5))');
   return (
     <div className="exercise">
       <header className="exercise-header">

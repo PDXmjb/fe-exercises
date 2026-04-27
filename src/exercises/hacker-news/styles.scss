@@ -1,6 +1,13 @@
+.hackernews__content {
+    background-color: rgb(242, 239, 239);
+}
+
 .comments__list {
     text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: left;
+    border-radius: 1rem;
+    background-color: white;
+
 }

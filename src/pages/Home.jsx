@@ -96,7 +96,7 @@ const exercises = [
     tags: ['state', 'forms', 'e-commerce'],
     difficulty: 'intermediate',
   },
-    {
+  {
     path: '/js-exercises',
     title: 'JS Exercises',
     description: 'Various Leetcode exercises',

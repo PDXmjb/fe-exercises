@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Comments from './Comments';
+import './styles.scss';
 
 function HackerNews() {
   const [data, setData] = useState(null);
@@ -35,12 +36,11 @@ function HackerNews() {
 
     fetchData();
   }, []);
-
   console.log('data', data);
   // Load the data
   // Display the data
   return (
-    <div>
+    <div className="hackernews__content">
       {data?.map((story) => (
         <div key={story.id}>
           <a href={story.url} target="_blank">

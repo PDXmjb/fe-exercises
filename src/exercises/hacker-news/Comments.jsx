@@ -1,3 +1,4 @@
+import './styles.scss';
 import { useEffect, useState } from 'react';
 
 function Comments({ ids }) {
