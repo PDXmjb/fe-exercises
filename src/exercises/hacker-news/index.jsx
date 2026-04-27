@@ -43,7 +43,7 @@ function HackerNews() {
     <div className="hackernews__content">
       {data?.map((story) => (
         <div key={story.id}>
-          <a href={story.url} target="_blank">
+          <a className="hackernews__title" href={story.url} target="_blank">
             {story.title}
           </a>
           <Comments ids={story.kids} />

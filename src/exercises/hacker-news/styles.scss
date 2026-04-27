@@ -2,6 +2,11 @@
     background-color: rgb(242, 239, 239);
 }
 
+.hackernews__title {
+    font-size: 1.5rem;
+    margin: 16px;
+}
+
 .comments__list {
     text-align: left;
     display: flex;
@@ -9,5 +14,5 @@
     justify-content: left;
     border-radius: 1rem;
     background-color: white;
-
+    margin: 2rem;
 }

@@ -27,7 +27,11 @@ function Comments({ ids }) {
   return (
     <ul className="comments__list">
       {comments?.map((comment) => {
-        return <li key={comment.id}>{comment.text}</li>;
+        return (
+          <li key={comment.id}>
+            <div dangerouslySetInnerHTML={{ __html: comment.text }}></div>
+          </li>
+        );
       })}
     </ul>
   );
