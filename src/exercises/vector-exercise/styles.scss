@@ -3,6 +3,16 @@
     background-color: #efefef;
     width: 100vw;
     height: 100vh;
+
+    p {
+        margin: 1rem;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 600;
+    }
+
+    input {
+        margin: 1rem;
+    }
 }
 
 .interview__card {
@@ -11,6 +21,20 @@
     min-height: 300px;
     padding: 1rem;
     border-radius: 1rem;
+
+    .restart__button {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .game__button {
+        width: 80px;
+        height: 80px;
+        border-radius: 0;
+        border: 1px solid black;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+    }
 
 
 }
