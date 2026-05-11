@@ -6,8 +6,8 @@ export default function JSExercisesDisplayer() {
   const result = convertStringToTree('4(2(3)(1))(6(5))');
   return (
     <div className="exercise">
-      <header className="exercise-header">
-        <Link to="/" className="back-link">
+      <header className="exercise__header">
+        <Link to="/" className="back__link">
           &larr; Back
         </Link>
         <h1>JS Exercises</h1>

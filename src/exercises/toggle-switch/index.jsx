@@ -10,8 +10,8 @@ export default function ToggleSwitch() {
 
   return (
     <div className="exercise">
-      <header className="exercise-header">
-        <Link to="/" className="back-link">
+      <header className="exercise__header">
+        <Link className="back__link" to="/">
           &larr; Back
         </Link>
         <h1>Toggle Switch</h1>
@@ -32,18 +32,18 @@ export default function ToggleSwitch() {
         <h2>Your Solution</h2>
         <div className={'toggle-switch'}>
           <button
-            type="button"
-            className={activeToggle === 'on' ? 'active' : ''}
-            onClick={() => toggleSwitch('on')}
             a11y-button="Changes the toggle to on"
+            className={activeToggle === 'on' ? 'active' : ''}
+            type="button"
+            onClick={() => toggleSwitch('on')}
           >
             On
           </button>
           <button
-            type="button"
-            className={activeToggle === 'off' ? 'active' : ''}
-            onClick={() => toggleSwitch('off')}
             a11y-button="Changes the toggle to off"
+            className={activeToggle === 'off' ? 'active' : ''}
+            type="button"
+            onClick={() => toggleSwitch('off')}
           >
             Off
           </button>

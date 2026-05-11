@@ -7,8 +7,8 @@ export default function Counter() {
 
   return (
     <div className="exercise">
-      <header className="exercise-header">
-        <Link to="/" className="back-link">
+      <header className="exercise__header">
+        <Link className="back__link" to="/">
           &larr; Back
         </Link>
         <h1>Counter</h1>
@@ -30,22 +30,22 @@ export default function Counter() {
         <h3>Current count: {count}</h3>
         <div className="button-group">
           <button
+            className="button-positive"
             type="button"
             onClick={() => {
               setCount((count) => count + 1);
             }}
-            className="button-positive"
           >
             Increment
           </button>
           <button
+            aria-disabled={count === 0}
+            className={`button-negative ${count === 0 ? 'disabled' : ''}`}
+            disabled={count === 0}
             type="button"
             onClick={() => {
               setCount((count) => count - 1);
             }}
-            className={`button-negative ${count === 0 ? 'disabled' : ''}`}
-            disabled={count === 0}
-            aria-disabled={count === 0}
           >
             Decrement
           </button>

@@ -4,8 +4,8 @@ import './styles.scss';
 export default function ImageCarousel() {
   return (
     <div className="exercise">
-      <header className="exercise-header">
-        <Link to="/" className="back-link">
+      <header className="exercise__header">
+        <Link to="/" className="back__link">
           &larr; Back
         </Link>
         <h1>Image Carousel</h1>

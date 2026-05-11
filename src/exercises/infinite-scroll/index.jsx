@@ -4,8 +4,8 @@ import './styles.scss';
 export default function InfiniteScroll() {
   return (
     <div className="exercise">
-      <header className="exercise-header">
-        <Link to="/" className="back-link">
+      <header className="exercise__header">
+        <Link to="/" className="back__link">
           &larr; Back
         </Link>
         <h1>Infinite Scroll</h1>

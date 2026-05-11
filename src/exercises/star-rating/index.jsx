@@ -33,8 +33,8 @@ export default function StarRating() {
 
   return (
     <div className="exercise">
-      <header className="exercise-header">
-        <Link to="/" className="back-link">
+      <header className="exercise__header">
+        <Link className="back__link" to="/">
           &larr; Back
         </Link>
         <h1>Star Rating</h1>
@@ -56,11 +56,11 @@ export default function StarRating() {
         <div>
           {starRating.map((star, index) => (
             <button
-              type="button"
               key={star + crypto.randomUUID()}
+              type="button"
               onClick={() => starClickHandler(index)}
-              onMouseOver={() => starHoverHandler(index)}
               onFocus={starHoverHandler}
+              onMouseOver={() => starHoverHandler(index)}
             >
               {star}
             </button>

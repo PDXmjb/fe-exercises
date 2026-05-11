@@ -50,8 +50,8 @@ function UserList() {
 export default function AccordionExercise() {
   return (
     <div className="exercise">
-      <header className="exercise-header">
-        <Link to="/" className="back-link">
+      <header className="exercise__header">
+        <Link className="back__link" to="/">
           &larr; Back
         </Link>
         <h1>Accordion</h1>

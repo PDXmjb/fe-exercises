@@ -43,8 +43,8 @@ export default function ProductPage() {
 
   return (
     <div className="exercise">
-      <header className="exercise-header">
-        <Link className="back-link" to="/">
+      <header className="exercise__header">
+        <Link className="back__link" to="/">
           &larr; Back
         </Link>
         <h1>Product Page</h1>

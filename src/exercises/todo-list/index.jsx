@@ -69,8 +69,8 @@ export default function TodoList() {
 
   return (
     <div className="exercise">
-      <header className="exercise-header">
-        <Link to="/" className="back-link">
+      <header className="exercise__header">
+        <Link className="back__link" to="/">
           &larr; Back
         </Link>
         <h1>Todo List</h1>
@@ -96,9 +96,9 @@ export default function TodoList() {
           <input
             className="task-input"
             {...register('task')}
+            autoComplete="off"
             name="task"
             type="text"
-            autoComplete="off"
           />
           <button className="task-button" type="submit">
             Add

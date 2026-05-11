@@ -11,8 +11,8 @@ export default function ModalDialog() {
   console.log('OPEN', isOpen);
   return (
     <div className="exercise">
-      <header className="exercise-header">
-        <Link to="/" className="back-link">
+      <header className="exercise__header">
+        <Link className="back__link" to="/">
           &larr; Back
         </Link>
         <h1>Modal Dialog</h1>
@@ -34,7 +34,7 @@ export default function ModalDialog() {
       <section className="workspace">
         <h2>Your Solution</h2>
         {/* Build your solution here */}
-        <button onClick={toggleModal(true)} type="button">
+        <button type="button" onClick={toggleModal(true)}>
           Open modal
         </button>
         <p>Bloop</p>
@@ -86,7 +86,7 @@ export default function ModalDialog() {
         <p>Bloop</p>
         <Modal isOpen={isOpen} toggleModal={toggleModal}>
           <div>Content!</div>
-          <input id="1" name="1" type="text" placeholder="Bleep" />
+          <input id="1" name="1" placeholder="Bleep" type="text" />
           <br />
           <textarea id="2" name="2"></textarea>
         </Modal>
